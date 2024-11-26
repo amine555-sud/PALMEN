@@ -1,0 +1,194 @@
+/* التصميم العام */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EAF8E7; /* خلفية الموقع العامة */
+    color: #023336; /* لون النص الأساسي */
+  }
+  
+  .navbar {
+    background-color: #023336; /* شريط التنقل */
+  }
+  
+  .navbar a {
+    color: #C1E6BA; /* لون النصوص في شريط التنقل */
+  }
+  
+  .navbar a:hover {
+    color: #4DA674; /* لون عند التمرير */
+  }
+  
+  .hero-section {
+    height: 80vh;
+    background: #023336; /* خلفية Hero */
+    color: #C1E6BA; /* نصوص Hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  
+  .product-card {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    background: #FFFFFF;
+  }
+  
+  .product-card img {
+    border-bottom: 2px solid #C1E6BA;
+  }
+  
+  .product-card h5 {
+    color: #023336;
+  }
+  
+  .product-card p {
+    color: #4DA674;
+  }
+  
+  .product-card button {
+    background-color: #4DA674;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product-card button:hover {
+    background-color: #023336;
+    color: #C1E6BA;
+  }
+  
+  /* معرض الصور */
+  #gallery img {
+    border: 2px solid #C1E6BA;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  #gallery img:hover {
+    transform: scale(1.05);
+    border-color: #4DA674;
+  }
+  
+  /* الفوتر */
+  footer {
+    background-color: #023336;
+    color: #C1E6BA;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #4DA674;
+  }
+  
+  footer a:hover {
+    color: #C1E6BA;
+  }
+
+  /* الأسلوب العام */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* شريط التنقل */
+.navbar {
+  background-color: #023336;
+  color: white;
+  padding: 1rem 0;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  color: #C1E6BA;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .navbar-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav li a.active {
+  font-weight: bold;
+  color: #4DA674;
+}
+
+/* قسم المنتجات */
+#shop {
+  padding: 2rem 0;
+  background-color: #EAF8E7;
+}
+
+#shop h1 {
+  text-align: center;
+  color: #023336;
+  margin-bottom: 2rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h5 {
+  margin: 1rem 0 0.5rem;
+}
+
+.product-card .price {
+  color: #4DA674;
+  font-weight: bold;
+}
+
+.product-card button {
+  background-color: #023336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #4DA674;
+}

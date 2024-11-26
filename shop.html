@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Shop - PALMEN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">PALMEN</a>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="cart.html" id="cartCount">Cart (0)</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- قسم المنتجات -->
+  <section id="shop">
+    <div class="container">
+      <h1>Our Products</h1>
+      <div id="productsList" class="products-grid">
+        <!-- سيتم إضافة المنتجات هنا باستخدام JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // تعريف قائمة المنتجات
+    const products = [];
+    for (let i = 1; i <= 100; i++) {
+      products.push({
+        id: i,
+        name: `Product ${i}`,
+        price: (Math.random() * 100 + 20).toFixed(2), // سعر عشوائي
+        image: `images/product${i}.jpg`, // مسار الصور
+        description: `This is the description for Product ${i}. It's a high-quality item that you'll love to wear.`,
+      });
+    }
+
+    // عرض المنتجات
+    function displayProducts() {
+      const productsList = document.getElementById('productsList');
+      productsList.innerHTML = '';
+
+      products.forEach(product => {
+        // إنشاء كرت المنتج
+        const productCard = `
+          <div class="product-card">
+            <img src="${product.images
+            }" alt="${product.name}" onerror="this.onerror=null; this.src='images';">
+            <h5>${product.name}</h5>
+            <p class="description">${product.description}</p>
+            <p class="price">$${product.price}</p>
+            <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+          </div>
+        `;
+        productsList.innerHTML += productCard;
+      });
+    }
+
+    // دالة لإضافة المنتجات إلى السلة
+    function addToCart(productName, productPrice) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: productName, price: productPrice });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+    }
+
+    // تحديث عداد السلة
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cartCount').textContent = `Cart (${cart.length})`;
+    }
+
+    // استدعاء الدوال عند تحميل الصفحة
+    window.onload = () => {
+      displayProducts();
+      updateCartCount();
+    };
+  </script>
+
+  <style>
+    /* الأسلوب العام */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* شريط التنقل */
+    .navbar {
+      background-color: #023336;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .navbar .navbar-brand {
+      font-size: 1.5rem;
+      color: #C1E6BA;
+      text-decoration: none;
+    }
+
+    .navbar .navbar-nav {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar .navbar-nav li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar .navbar-nav li a.active {
+      font-weight: bold;
+      color: #4DA674;
+    }
+
+    /* قسم المنتجات */
+    #shop {
+      padding: 2rem 0;
+      background-color: #EAF8E7;
+    }
+
+    #shop h1 {
+      text-align: center;
+      color: #023336;
+      margin-bottom: 2rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h5 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .product-card .price {
+      color: #4DA674;
+      font-weight: bold;
+    }
+
+    .product-card button {
+      background-color: #023336;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #4DA674;
+    }
+  </style>
+</body>
+
+</html>

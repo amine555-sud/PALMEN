@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PALMEN - Fashion for Men & Women</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">PALMEN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html" id="cartCount">Cart (0)</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- شريط صور كبير ومتحرك -->
+  <section class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/product1.jpg.png" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="images/product14.jpg.jpg" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="images/product18.jpg.jpg" alt="Slide 3"></div>
+    </div>
+    <!-- التحكم -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </section>
+
+  <!-- قسم المنتجات -->
+  <section id="shop" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Products</h2>
+      <div class="row">
+        <!-- منتج 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <a href="product-detail.html">
+              <img src="images/product100.jpg.jpg" alt="Men's Jacket">
+              <h5 class="mt-3">Men's Jacket</h5>
+              <p>$79.99</p>
+            </a>
+            <button class="btn btn-primary" onclick="addToCart('Men\'s Jacket', 79.99)">Add to Cart</button>
+        </div>
+      </div>
+        <!-- منتج 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <a href="product-detail.html">
+              <img src="images/product99.jpg.jpg" alt="Women's Dress">
+              <h5 class="mt-3">Women's Dress</h5>
+              <p>$59.99</p>
+            </a>
+            <button class="btn btn-primary" onclick="addToCart('Women\'s Dress', 59.99)">Add to Cart</button>
+        </div>
+      </div>
+
+        <!-- منتج 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="product-card">
+            <a href="product-detail.html">
+              <img src="images/product100.jpg.jpg" alt="Men's Shoes">
+              <h5 class="mt-3">Men's Shoes</h5>
+              <p>$99.99</p>
+            </a>
+            <button class="btn btn-primary" onclick="addToCart('Men\'s Shoes', 99.99)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- معرض الصور -->
+ 
+
+  <!-- الفوتر -->
+  <footer>
+    <p>&copy; 2024 PALMEN. All rights reserved. | <a href="#contact">Contact Us</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
